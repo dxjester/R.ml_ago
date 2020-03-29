@@ -1,0 +1,394 @@
+install.packages("kernlab")
+credit_card_data <- read.delim("~/Desktop/Georgia Tech/ISYE 6501 - Intro Analytics Modeling/Week 1/Homework #1/credit_card_data.txt", header=FALSE)
+View(credit_card_data)
+plot(credit_card_data)
+plot(credit_card_data$V9, credit_card_data$V10)
+credit_card_data.headers <- read.delim("~/Desktop/Georgia Tech/ISYE 6501 - Intro Analytics Modeling/Week 1/Homework #1/credit_card_data-headers.txt", header=FALSE)
+View(credit_card_data.headers)
+View(credit_card_data.headers)
+credit_card_data_headers <- read.delim("~/Desktop/Georgia Tech/ISYE 6501 - Intro Analytics Modeling/Week 1/Homework #1/credit_card_data-headers.txt")
+View(credit_card_data_headers)
+plot(credit_card_data_headers)
+plot(credit_card_data_headers$a14, credit_card_data_headers$a15, col=credit_card_data_headers$R1)
+plot(credit_card_data_headers$a14, credit_card_data_headers$a15)
+plot(credit_card_data_headers)
+plot(credit_card_data_headers$a14)
+plot(credit_card_data_headers$A14)
+plot(credit_card_data_headers$A14, credit_card_data_headers$A15, col=credit_card_data_headers$R1)
+plot(credit_card_data_headers$A1, credit_card_data_headers$R1)
+plot(credit_card_data_headers$A1, col=credit_card_data_headers$R1)
+plot(credit_card_data_headers$A2, col=credit_card_data_headers$R1)
+# Plot A3 column values against R1 (positive / negative values) to determine potential classification proposals
+plot(credit_card_data_headers$A3, col=credit_card_data_headers$R1)
+plot(credit_card_data_headers$A3, col=credit_card_data_headers$R1, color=cyl)
+plot(credit_card_data_headers$A8, col=credit_card_data_headers$R1, col=c(blue,red))
+plot(credit_card_data_headers$A8, col=c(blue,red))
+plot(credit_card_data_headers$A8, credit_card_data_headers$R1, col="red")
+plot(credit_card_data_headers$A8, col=credit_card_data_headers$R1)
+plot(credit_card_data_headers$A8, col=credit_card_data_headers$R1,col=c("red","blue","green")
+plot(credit_card_data_headers$A8, col=credit_card_data_headers$R1,col=c("red","blue","green"))
+plot(credit_card_data_headers$A8, col=credit_card_data_headers$R1,col=c("red","blue","green"))
+plot(credit_card_data_headers$A8, col=credit_card_data_headers$R1,col=c("red","blue"))
+plot(credit_card_data_headers$A8, col=credit_card_data_headers$R1, col=c("red","blue"))
+plot(credit_card_data_headers$A8, col=credit_card_data_headers$R1, col=c("red"))
+plot(credit_card_data_headers$A8, col=credit_card_data_headers$R1, col="red")
+plot(credit_card_data_headers$A8, credit_card_data_headers$R1,col=c("red","blue"))
+plot(credit_card_data_headers$A3, credit_card_data_headers$R1,col=c("red","blue"))
+plot(credit_card_data_headers$A2, credit_card_data_headers$R1,col=c("red","blue"))
+plot(credit_card_data_headers$A1, col=credit_card_data_headers$R1)
+plot(credit_card_data_headers$A2, credit_card_data_headers$R1,col=c("red","green"))
+plot(credit_card_data_headers$A10, col=credit_card_data_headers$R1)
+plot(credit_card_data_headers$A9, credit_card_data_headers$R1,col=c("red","green"))
+plot(credit_card_data_headers$A10, credit_card_data_headers$R1,col=c("red","green"))
+# Plot A11 column values against R1 (positive / negative values) to determine potential classification proposals
+plot(credit_card_data_headers$A10, credit_card_data_headers$R1,col=c("red","green"))
+plot(credit_card_data_headers$A11, credit_card_data_headers$R1,col=c("red","green"))
+plot(credit_card_data_headers$A12, credit_card_data_headers$R1,col=c("red","green"))
+# Plot A14 column values against R1 (positive / negative values) to determine potential classification proposals
+plot(credit_card_data_headers$A14, credit_card_data_headers$R1,col=c("red","green"))
+plot(credit_card_data_headers$A15, credit_card_data_headers$R1,col=c("red","green"))
+model <- ksvm(credit_card_data_headers[,1:10],data[,11], type=”C- svc”,kernel=”vanilladot”,C=100,scaled=TRUE)
+print(model)
+plot(model)
+model <- ksvm(credit_card_data_headers[1:10],data[11], type=”C-svc”,kernel=”vanilladot”,C=100,scaled=TRUE)
+model <- ksvm(credit_card_data_headers[1:10],data[11], type=”C-svc”, kernel=”vanilladot”, C=100, scaled=TRUE)
+model <- ksvm(credit_card_data_headers[1:10],data[11], type="C-svc", kernel=”vanilladot”, C=100, scaled=TRUE)
+model <- ksvm(credit_card_data_headers[1:10],data[11], type="C-svc", kernel="vanilladot", C=100, scaled=TRUE)
+model <- svm(credit_card_data_headers[1:10],data[11], type="C-svc", kernel="vanilladot", C=100, scaled=TRUE)
+library(kernlab)
+install.packages("kernlab")
+install.packages(c("boot", "class", "cluster", "codetools", "foreign", "lattice", "MASS", "Matrix", "mgcv", "rpart", "survival"))
+library(kernlab)
+install.packages("kernlab")
+model <- ksvm(credit_card_data_headers[1:10],data[11], type="C-svc", kernel="vanilladot", C=100, scaled=TRUE)
+install.packages(c("cluster", "Matrix", "mgcv"))
+# Filename: HW# 1 - Benitez P.
+# Question: 2.2.2
+# Author: Patrick C. Benitez
+# Date initiated: 13-JAN-18 #
+# Date updated: 16-JAN-18 #
+# Comments:  R script to calculate classification line for credit card data # with various kernels
+set.seed(654)
+# Load library
+library(kernlab)
+# read in credit card data from working directory
+ccData <- read.table("credit_card_data.txt", stringsAsFactors = FALSE, header = FALSE)
+# Start trial number: 1
+# Kernel: laplacedot
+# C Value: 100
+# Accuracy: 100%
+# Comments: Initial (proposed) C value provided in the homework assignment
+ksFunction <- function(x){
+#values <- vector(mode="numeric", length="654") # create a vector to fill on assigned values for each data point
+loopKS <- ksvm(V11~., data = ccData, type="C-svc", kernel="laplacedot", C=10^x,scaled=TRUE)
+values <- predict(loopKS,ccData[,1:10])
+returnValue = sum(values == ccData[,11]) / nrow(ccData)
+return(returnValue)
+}
+loopKStest <-vector(mode="numeric", length = "10")
+for(x in 1:10){
+loopKStest[x] = ksFunction(x)
+}
+print(loopKStest)
+plot(loopKStest) # plot values based on 'k' index
+title("Polydot Accuracy by K Values")
+# End lpacedot trial
+# Start trial number: 2
+# Kernel: Polydot
+# C Value: multiple, dynamic
+# Accuracy: various
+# Comments:
+ksFunction <- function(x){
+#values <- vector(mode="numeric", length="654") # create a vector to fill on assigned values for each data point
+loopKS <- ksvm(V11~., data = ccData, type="C-svc", kernel="polydot", C=10^x,scaled=TRUE)
+values <- predict(loopKS,ccData[,1:10])
+returnValue = sum(values == ccData[,11]) / nrow(ccData)
+return(returnValue)
+}
+loopKStest <-vector(mode="numeric", length = "10")
+for(x in 1:10){
+loopKStest[x] = ksFunction(x)
+}
+print(loopKStest)
+plot(loopKStest) # plot values based on 'k' index
+title("Laplacedot Accuracy by K Values")
+# End polydot trial 2
+# Start trial number: 3
+# Kernel: rbfdot
+# C Value: multiple, dynamic
+# Accuracy: various
+# Comments:
+ksFunction <- function(x){
+#values <- vector(mode="numeric", length="654") # create a vector to fill on assigned values for each data point
+loopKS <- ksvm(V11~., data = ccData, type="C-svc", kernel="rbfdot", C=10^x,scaled=TRUE)
+values <- predict(loopKS,ccData[,1:10])
+returnValue = sum(values == ccData[,11]) / nrow(ccData)
+return(returnValue)
+}
+loopKStest <-vector(mode="numeric", length = "10")
+for(x in 1:10){
+loopKStest[x] = ksFunction(x)
+}
+print(loopKStest)
+plot(loopKStest) # plot values based on 'k' index
+title("rbfdot Accuracy by K Values")
+# End rbfdot trial 3
+setwd("~/Desktop/Georgia Tech/ISYE 6501 - Intro Analytics Modeling/Week 3")
+library(ggplot2)
+# Filename: HW# 2 - Benitez P.
+# Question: 3.1.a
+# Author: Patrick C. Benitez
+# Date created: 20-JAN-19
+# Date updated: 22-JAN-19
+# Comments: Using crime data from the file uscrime.txt (http://www.statsci.org/data/general/uscrime.txt, description at http://www.statsci.org/data/general/uscrime.html), test to see whether there are any outliers in the last column (number of crimes per 100,000 people). Use the grubbs.test function in the outliers package in R.
+# -------------------------------------------------------------- #
+# --------------------- BEGIN 5.1 PROBLEM ---------------------- #
+# -------------------------------------------------------------- #
+library(ggplot2)
+library(outliers)
+rm(list = ls())
+crimeData <- read.table("uscrime.txt", stringsAsFactors = FALSE, header = TRUE)
+boxplot(crimeData$Crime)
+timePlot <- ggplot(crime_scaled, aes(x = Time, y = Crime, color=Crime)) + geom_point() + geom_line()
+wealthPlot<- ggplot(crime_scaled, aes(x = Wealth, y = Crime, color=Crime)) + geom_point()
+popPlot <- ggplot(crime_scaled, aes(x = Pop, y = Crime, color=Crime)) + geom_point()
+ineqPlot <- ggplot(crime_scaled, aes(x = Ineq, y = Crime, color=Crime)) + geom_point()
+plot(timePlot)
+plot(wealthPlot)
+plot(popPlot)
+plot(ineqPlot)
+shapiro.test(crime$Crime)
+gTest1 <- grubbs.test(crimeData$Crime, type = 11)
+gTest1$p.value
+gTest2 <- grubbs.test(crimeData$Crime, type = 11)
+gTest2$p.value
+gTest3 <- grubbs.test(crimeData$Crime, type = 11)
+gTest3$p.value
+# Filename: HW# 2 - Benitez P.
+# Question: 3.1.a
+# Author: Patrick C. Benitez
+# Date created: 20-JAN-19
+# Date updated: 22-JAN-19
+# Comments: Using crime data from the file uscrime.txt (http://www.statsci.org/data/general/uscrime.txt, description at http://www.statsci.org/data/general/uscrime.html), test to see whether there are any outliers in the last column (number of crimes per 100,000 people). Use the grubbs.test function in the outliers package in R.
+# -------------------------------------------------------------- #
+# --------------------- BEGIN 5.1 PROBLEM ---------------------- #
+# -------------------------------------------------------------- #
+library(ggplot2)
+library(outliers)
+rm(list = ls())
+crimeData <- read.table("uscrime.txt", stringsAsFactors = FALSE, header = TRUE)
+boxplot(crimeData$Crime)
+timePlot <- ggplot(crimeData, aes(x = Time, y = Crime, color=Crime)) + geom_point() + geom_line()
+wealthPlot<- ggplot(crimeData, aes(x = Wealth, y = Crime, color=Crime)) + geom_point()
+popPlot <- ggplot(crimeData, aes(x = Pop, y = Crime, color=Crime)) + geom_point()
+ineqPlot <- ggplot(crimeData, aes(x = Ineq, y = Crime, color=Crime)) + geom_point()
+plot(timePlot)
+plot(wealthPlot)
+plot(popPlot)
+plot(ineqPlot)
+shapiro.test(crime$Crime)
+gTest1 <- grubbs.test(crimeData$Crime, type = 11)
+gTest1$p.value
+gTest2 <- grubbs.test(crimeData$Crime, type = 11)
+gTest2$p.value
+gTest3 <- grubbs.test(crimeData$Crime, type = 11)
+gTest3$p.value
+# Filename: HW# 2 - Benitez P.
+# Question: 3.1.a
+# Author: Patrick C. Benitez
+# Date created: 20-JAN-19
+# Date updated: 22-JAN-19
+# Comments: Using crime data from the file uscrime.txt (http://www.statsci.org/data/general/uscrime.txt, description at http://www.statsci.org/data/general/uscrime.html), test to see whether there are any outliers in the last column (number of crimes per 100,000 people). Use the grubbs.test function in the outliers package in R.
+# -------------------------------------------------------------- #
+# --------------------- BEGIN 5.1 PROBLEM ---------------------- #
+# -------------------------------------------------------------- #
+library(ggplot2)
+library(outliers)
+rm(list = ls())
+crimeData <- read.table("uscrime.txt", stringsAsFactors = FALSE, header = TRUE)
+boxplot(crimeData$Crime)
+timePlot <- ggplot(crimeData, aes(x = Time, y = Crime, color=Crime)) + geom_point() + geom_line()
+wealthPlot<- ggplot(crimeData, aes(x = Wealth, y = Crime, color=Crime)) + geom_point()
+popPlot <- ggplot(crimeData, aes(x = Pop, y = Crime, color=Crime)) + geom_point()
+ineqPlot <- ggplot(crimeData, aes(x = Ineq, y = Crime, color=Crime)) + geom_point()
+plot(timePlot)
+plot(wealthPlot)
+plot(popPlot)
+plot(ineqPlot)
+shapiro.test(crimeData$Crime)
+gTest1 <- grubbs.test(crimeData$Crime, type = 11)
+gTest1$p.value
+gTest2 <- grubbs.test(crimeData$Crime, type = 11)
+gTest2$p.value
+gTest3 <- grubbs.test(crimeData$Crime, type = 11)
+gTest3$p.value
+# Filename: HW# 2 - Benitez P.
+# Question: 3.1.a
+# Author: Patrick C. Benitez
+# Date created: 20-JAN-19
+# Date updated: 22-JAN-19
+# Comments: Using crime data from the file uscrime.txt (http://www.statsci.org/data/general/uscrime.txt, description at http://www.statsci.org/data/general/uscrime.html), test to see whether there are any outliers in the last column (number of crimes per 100,000 people). Use the grubbs.test function in the outliers package in R.
+# -------------------------------------------------------------- #
+# --------------------- BEGIN 5.1 PROBLEM ---------------------- #
+# -------------------------------------------------------------- #
+library(ggplot2)
+library(outliers)
+rm(list = ls())
+crimeData <- read.table("uscrime.txt", stringsAsFactors = FALSE, header = TRUE)
+boxplot(crimeData$Crime)
+timePlot <- ggplot(crimeData, aes(x = Time, y = Crime, color=Crime)) + geom_point() + geom_line()
+wealthPlot<- ggplot(crimeData, aes(x = Wealth, y = Crime, color=Crime)) + geom_point()
+popPlot <- ggplot(crimeData, aes(x = Pop, y = Crime, color=Crime)) + geom_point()
+ineqPlot <- ggplot(crimeData, aes(x = Ineq, y = Crime, color=Crime)) + geom_point()
+plot(timePlot)
+plot(wealthPlot)
+plot(popPlot)
+plot(ineqPlot)
+shapiro.test(crimeData$Crime)
+qqnorm(crimeData$Crime)
+gTest1 <- grubbs.test(crimeData$Crime, type = 11)
+gTest1$p.value
+gTest2 <- grubbs.test(crimeData$Crime, type = 11)
+gTest2$p.value
+gTest3 <- grubbs.test(crimeData$Crime, type = 11)
+gTest3$p.value
+head(crimeData)
+install.packages("outliers")
+library(ggplot2)
+library(outliers)
+rm(list = ls())
+crimeData <- read.table("uscrime.txt", stringsAsFactors = FALSE, header = TRUE)
+boxplot(crimeData$Crime)
+head(crimeData)
+timePlot <- ggplot(crimeData, aes(x = Time, y = Crime, color=Crime)) + geom_point() + geom_line()
+wealthPlot<- ggplot(crimeData, aes(x = Wealth, y = Crime, color=Crime)) + geom_point()
+popPlot <- ggplot(crimeData, aes(x = Pop, y = Crime, color=Crime)) + geom_point()
+ineqPlot <- ggplot(crimeData, aes(x = Ineq, y = Crime, color=Crime)) + geom_point()
+plot(timePlot)
+plot(wealthPlot)
+plot(popPlot)
+plot(ineqPlot)
+shapiro.test(crimeData$Crime)
+qqnorm(crimeData$Crime)
+gTest1 <- grubbs.test(crimeData$Crime, type = 11)
+gTest1$p.value
+gTest2 <- grubbs.test(crimeData$Crime, type = 11)
+gTest2$p.value
+gTest3 <- grubbs.test(crimeData$Crime, type = 11)
+gTest3$p.value
+gTest1 <- grubbs.test(crimeData$Crime, type = 11)
+gTest1$p.value
+gTest2 <- grubbs.test(crimeData$Crime, type = 11)
+gTest2$p.value
+gTest3 <- grubbs.test(crimeData$Crime, type = 20)
+gTest3$p.value
+gTest1 <- grubbs.test(crimeData$Crime, type = 10)
+gTest1$p.value
+gTest2 <- grubbs.test(crimeData$Crime, type = 11)
+gTest2$p.value
+gTest3 <- grubbs.test(crimeData$Crime, type = 20)
+gTest3$p.value
+boxplot(crime[,-c(12, 16)])
+boxplot(crimeData[,-c(12, 16)])
+gTest1 <- grubbs.test(crimeData$Crime, type = 10)
+gTest1$p.value
+gTest1$alternative
+gTest1$p.value
+gTest2 <- grubbs.test(crimeData$Crime, type = 11)
+gTest2$p.value
+gTest2$alternative
+gTest2$p.value
+plot(timePlot)
+boxplot(crimeData$Crime)
+boxplot(crimeData[,-c(12, 16)])
+qqnorm(crimeData$Crime)
+boxplot(crimeData[,-c(12, 16)])
+head(crimeData)
+gTest1 <- grubbs.test(crimeData$Crime, type = 10)
+gTest1$p.value
+gTest1$alternative
+gTest1$p.value
+# Test for two sideded outlier
+gTest2 <- grubbs.test(crimeData$Crime, type = 11)
+gTest2$p.value
+gTest2$alternative
+gTest2$p.value
+# Exception error whe type = 20
+gTest3 <- grubbs.test(crimeData$Crime, type = 20)
+gTest3$p.value
+setwd("~/Desktop/Georgia Tech/ISYE 6501 - Intro Analytics Modeling/Week 4")
+# Filename: HW# 3 - Benitez P.
+# Question: 5.1
+# Author: Patrick C. Benitez
+# Date created: 30-JAN-19
+# Date updated: 30-JAN-19
+# Comments: Using crime data from the file uscrime.txt (http://www.statsci.org/data/general/uscrime.txt, description at http://www.statsci.org/data/general/uscrime.html), test to see whether there are any outliers in the last column (number of crimes per 100,000 people). Use the grubbs.test function in the outliers package in R.
+# install.packages("outliers")
+# -------------------------------------------------------------- #
+# --------------------- BEGIN 5.1 PROBLEM ---------------------- #
+# -------------------------------------------------------------- #
+library(ggplot2)
+library(outliers)
+rm(list = ls())
+# Phase 1: Read in table, manually inspect for any outliers by predictor variables
+temperatureData <- read.table("temps.txt", stringsAsFactors = FALSE, header = TRUE)
+head(temperatureData)
+temperatureData <- read.table("temps.txt", stringsAsFactors = FALSE, header = TRUE)
+head(temperatureData)
+plot(temperatureData)
+tempsData <- read.table("temps.txt", stringsAsFactors = FALSE, header = TRUE)
+head(tempsData)
+tempsVector <- as.vector(unlist(temps[,2,21]))
+tempsVector
+tempsVector <- as.vector(unlist(temps[,2:21]))
+tempsVector
+tempsVector <- as.vector(unlist(tempsData[,2:21]))
+tempsVector
+tempsTimeSeries <- ts(tempsVector, start=1996,frequency = 123)
+tempsTimeSeries
+plot(tempsTimeSeries)
+tempsHW <- HoltWinters(tempsTimeSeries, alpha = null, beta = null, gamma = null, seasonal = "multiplicative")
+tempsHW <- HoltWinters(tempsTimeSeries, alpha = NULL, beta = NULL, gamma = NULL, seasonal = "multiplicative")
+plot(tempsHW)
+head(tempsHW)
+plot(tempsHW$fitted)
+plot(decompose(tempsTimeSeries, type="multiplicative"))
+shapiro.test(tempsHW$fitted)
+shapiro.test(tempsHW)
+shapiro.test(tempsTimeSeries)
+shapiro.test(crimeData$Crime)
+qqnorm(tempsTimeSeries)
+# Phase 5: Export data to Excel
+library(xlsx)
+write.xlsx(tempsHW,"tempsHW-Export.xlsx")
+install.packages("xlsx")
+library(xlsx)
+write.xlsx(tempsHW,"tempsHW-Export.xlsx")
+library(xlsx)
+install.packages("rJava")
+install.packages("xlsxjars")
+library(xlsx)
+write.csv(tempsHW, file = "tempsExport.csv")
+head(tempsHW)
+write.csv(tempsHW, file = "tempsExport.csv")
+write.table(tempsHW, file="mydata.csv",sep=",",row.names=F)
+tempsVector <- as.vector(unlist(tempsData[,2:21]))
+tempsVector
+tempsTimeSeries <- ts(tempsVector, start=1996,frequency = 123)
+tempsTimeSeries
+plot(tempsTimeSeries)
+# Phase 3: Utilize HoltWinters function & plot
+tempsHW <- HoltWinters(tempsTimeSeries, alpha = NULL, beta = NULL, gamma = NULL, seasonal = "multiplicative")
+head(tempsHW)
+plot(tempsHW)
+plot(tempsHW$fitted)
+plot(decompose(tempsTimeSeries, type="multiplicative"))
+# Phase 4: Apply Shapiro test, normalize
+shapiro.test(tempsTimeSeries)
+qqnorm(tempsTimeSeries)
+# Phase 5: Export data to Excel
+write.table(tempsHW, file="mydata.csv",sep=",",row.names=F)
+write.csv(fitted(tempsHW), file = "tempsExport.csv")
+plot(tempsTimeSeries)
+plot(tempsHW$fitted)
+qqnorm(tempsTimeSeries)
